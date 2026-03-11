@@ -38,7 +38,7 @@ void search_song(Node* head, string name) {
     cout << "Couldn't find " << name << " in the playlist." << endl;
 }
 
-void listSongs(Node* head) {
+void list_songs(Node* head) {
     if (head == nullptr) {
         cout << "The playlist is empty." << endl;
         return;
@@ -91,7 +91,7 @@ int main() {
                 search_song(playlistStart, songName);
                 break;
             case 3:
-                listSongs(playlistStart);
+                list_songs(playlistStart);
                 break;
             case 4:
                 cout << "Exiting..." << endl;
