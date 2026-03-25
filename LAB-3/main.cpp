@@ -139,23 +139,35 @@ void clear() {
 }
 
 int main() {
-    int choice = 0;
+    string choiceString;
+    bool isRunning = true;
 
     string siteUrl;
     string siteTitle;
     int hour, min, sec = 0;
 
-    while (choice != 6) {
+    while (isRunning) {
         cout << "\nWeb Browser:" << endl;
         cout << "1. Visit Site" << endl;
         cout << "2. Go Back" << endl;
         cout << "3. Go Forward" << endl;
         cout << "4. History" << endl;
         cout << "5. Delete Current From History" << endl;
-        cout << "6. Exit" << endl;
+        cout << "Type EXIT to exit." << endl;
         cout << "Your choice: ";
-        cin >> choice;
-        cin.ignore();
+        getline(cin, choiceString);
+
+        if (choiceString == "EXIT") {
+            isRunning = false;
+
+            cout << "Exiting..." << endl;
+            clear();
+
+            continue;
+        }
+
+        int choice = 0;
+        choice = stoi(choiceString);
 
         switch (choice)
         {
@@ -189,10 +201,6 @@ int main() {
                 break;
             case 5:
                 delete_current();
-                break;
-            case 6:
-                cout << "Exiting..." << endl;
-                clear();
                 break;
             default:
                 cout << "Invalid choice!" << endl;
