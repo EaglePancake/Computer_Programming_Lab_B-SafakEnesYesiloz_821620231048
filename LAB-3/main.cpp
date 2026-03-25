@@ -15,7 +15,6 @@ Page* head = nullptr;
 Page* current = nullptr;
 
 void visit_page(string siteUrl, string siteTitle, int hour, int min, int sec) {
-    // Create the new node
     Page* newPage = new Page;
     newPage->url = siteUrl;
     newPage->title = siteTitle;
