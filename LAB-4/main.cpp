@@ -59,7 +59,7 @@ void new_customer() {
     cout << "Enter Customer Name: ";
     getline(cin, customerQueue[rear].customerName);
 
-    cout << "Enter Transaction Type (e.g., Withdraw, Deposit): ";
+    cout << "Enter Transaction Type (Withdraw, Deposit): ";
     getline(cin, customerQueue[rear].transactionType);
 
     queueCount++;
