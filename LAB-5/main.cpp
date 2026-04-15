@@ -70,27 +70,27 @@ void transferStack(Stack* source, Stack* destination) {
 
     for (int i = 0; i < MAX; ++i)
     {
-        int value = pop(source);
-        if (value != -1)
+        if (!isStackEmpty(source))
         {
+            int value = pop(source);
             enqueue(&tempQueue, value);
         }
     }
 
     for (int i = 0; i < MAX; ++i)
     {
-        int value = dequeue(&tempQueue);
-        if (value != -1)
+        if (!isQueueEmpty(&tempQueue))
         {
+            int value = dequeue(&tempQueue);
             push(source, value);
         }
     }
 
     for (int i = 0; i < MAX; ++i)
     {
-        int value = pop(source);
-        if (value != -1)
+        if (!isStackEmpty(source))
         {
+            int value = pop(source);
             push(destination, value);
         }
     }
