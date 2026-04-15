@@ -68,32 +68,24 @@ void transferStack(Stack* source, Stack* destination) {
     // to move elements from 'source' to 'destination' 
     // while keeping the exact same order.
 
-    for (int i = 0; i < MAX; ++i)
+    while (!isStackEmpty(source))
     {
-        if (!isStackEmpty(source))
-        {
-            int value = pop(source);
-            enqueue(&tempQueue, value);
-        }
+        int value = pop(source);
+        enqueue(&tempQueue, value);
     }
 
-    for (int i = 0; i < MAX; ++i)
+    while (!isQueueEmpty(&tempQueue))
     {
-        if (!isQueueEmpty(&tempQueue))
-        {
-            int value = dequeue(&tempQueue);
-            push(source, value);
-        }
+        int value = dequeue(&tempQueue);
+        push(source, value);
     }
 
-    for (int i = 0; i < MAX; ++i)
+    while (!isStackEmpty(source))
     {
-        if (!isStackEmpty(source))
-        {
-            int value = pop(source);
-            push(destination, value);
-        }
+        int value = pop(source);
+        push(destination, value);
     }
+
 }
 // ==========================================
 
